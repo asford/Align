@@ -65,26 +65,26 @@ nmap <silent> <script> <Plug>AlignMapsWrapperEnd	:call AlignMaps#WrapperEnd()<CR
 
 " ---------------------------------------------------------------------
 " Complex C-code alignment maps: {{{2
-if !hasmapto('<Plug>AM_a?')   |map <unique> <Leader>a?		<Plug>AM_a?|endif
-if !hasmapto('<Plug>AM_a,')   |map <unique> <Leader>a,		<Plug>AM_a,|endif
-if !hasmapto('<Plug>AM_a<')   |map <unique> <Leader>a<		<Plug>AM_a<|endif
-if !hasmapto('<Plug>AM_a=')   |map <unique> <Leader>a=		<Plug>AM_a=|endif
-if !hasmapto('<Plug>AM_a(')   |map <unique> <Leader>a(		<Plug>AM_a(|endif
-if !hasmapto('<Plug>AM_abox') |map <unique> <Leader>abox	<Plug>AM_abox|endif
-if !hasmapto('<Plug>AM_acom') |map <unique> <Leader>acom	<Plug>AM_acom|endif
-if !hasmapto('<Plug>AM_adcom')|map <unique> <Leader>adcom	<Plug>AM_adcom|endif
-if !hasmapto('<Plug>AM_aocom')|map <unique> <Leader>aocom	<Plug>AM_aocom|endif
-if !hasmapto('<Plug>AM_ascom')|map <unique> <Leader>ascom	<Plug>AM_ascom|endif
-if !hasmapto('<Plug>AM_adec') |map <unique> <Leader>adec	<Plug>AM_adec|endif
-if !hasmapto('<Plug>AM_adef') |map <unique> <Leader>adef	<Plug>AM_adef|endif
-if !hasmapto('<Plug>AM_afnc') |map <unique> <Leader>afnc	<Plug>AM_afnc|endif
-if !hasmapto('<Plug>AM_afnc') |map <unique> <Leader>afnc	<Plug>AM_afnc|endif
-if !hasmapto('<Plug>AM_aunum')|map <unique> <Leader>aunum	<Plug>AM_aenum|endif
-if !hasmapto('<Plug>AM_aenum')|map <unique> <Leader>aenum	<Plug>AM_aunum|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_a?')   |map <unique> <Leader>a?		<Plug>AM_a?|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_a,')   |map <unique> <Leader>a,		<Plug>AM_a,|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_a<')   |map <unique> <Leader>a<		<Plug>AM_a<|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_a=')   |map <unique> <Leader>a=		<Plug>AM_a=|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_a(')   |map <unique> <Leader>a(		<Plug>AM_a(|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_abox') |map <unique> <Leader>abox	<Plug>AM_abox|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_acom') |map <unique> <Leader>acom	<Plug>AM_acom|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_adcom')|map <unique> <Leader>adcom	<Plug>AM_adcom|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_aocom')|map <unique> <Leader>aocom	<Plug>AM_aocom|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_ascom')|map <unique> <Leader>ascom	<Plug>AM_ascom|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_adec') |map <unique> <Leader>adec	<Plug>AM_adec|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_adef') |map <unique> <Leader>adef	<Plug>AM_adef|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_afnc') |map <unique> <Leader>afnc	<Plug>AM_afnc|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_afnc') |map <unique> <Leader>afnc	<Plug>AM_afnc|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_aunum')|map <unique> <Leader>aunum	<Plug>AM_aenum|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_aenum')|map <unique> <Leader>aenum	<Plug>AM_aunum|endif
 if exists("g:alignmaps_euronumber") && !exists("g:alignmaps_usanumber")
- if !hasmapto('<Plug>AM_anum')|map <unique> <Leader>anum	<Plug>AM_aenum|endif
+ if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_anum')|map <unique> <Leader>anum	<Plug>AM_aenum|endif
 else
- if !hasmapto('<Plug>AM_anum')|map <unique> <Leader>anum	<Plug>AM_aunum|endif
+ if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_anum')|map <unique> <Leader>anum	<Plug>AM_aunum|endif
 endif
 
 map <silent> <script> <Plug>AM_a?		<SID>WS:AlignCtrl mIp1P1lC ? : : : : <CR>:'a,.Align<CR>:'a,'z-1s/\(\s\+\)? /?\1/e<CR><SID>WE
@@ -105,24 +105,24 @@ map <silent> <script> <Plug>AM_aenum	<SID>WS:'a,'zs/\%([0-9.]\)\s\+\([-+]\=\d\)/
 
 " ---------------------------------------------------------------------
 " html table alignment	{{{2
-if !hasmapto('<Plug>AM_Htd')|map <unique> <Leader>Htd	<Plug>AM_Htd|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_Htd')|map <unique> <Leader>Htd	<Plug>AM_Htd|endif
 map <silent> <script> <Plug>AM_Htd <SID>WS:'y,'zs%<[tT][rR]><[tT][dD][^>]\{-}>\<Bar></[tT][dD]><[tT][dD][^>]\{-}>\<Bar></[tT][dD]></[tT][rR]>%@&@%g<CR>'yjma'zk:AlignCtrl m=Ilp1P0 @<CR>:'a,.Align<CR>:'y,'zs/ @/@/<CR>:'y,'zs/@ <[tT][rR]>/<[tT][rR]>/ge<CR>:'y,'zs/@//ge<CR><SID>WE
 
 " ---------------------------------------------------------------------
 " character-based right-justified alignment maps {{{2
-if !hasmapto('<Plug>AM_T|')|map <unique> <Leader>T|		<Plug>AM_T||endif
-if !hasmapto('<Plug>AM_T#')	 |map <unique> <Leader>T#		<Plug>AM_T#|endif
-if !hasmapto('<Plug>AM_T,')	 |map <unique> <Leader>T,		<Plug>AM_T,o|endif
-if !hasmapto('<Plug>AM_Ts,') |map <unique> <Leader>Ts,		<Plug>AM_Ts,|endif
-if !hasmapto('<Plug>AM_T:')	 |map <unique> <Leader>T:		<Plug>AM_T:|endif
-if !hasmapto('<Plug>AM_T;')	 |map <unique> <Leader>T;		<Plug>AM_T;|endif
-if !hasmapto('<Plug>AM_T<')	 |map <unique> <Leader>T<		<Plug>AM_T<|endif
-if !hasmapto('<Plug>AM_T=')	 |map <unique> <Leader>T=		<Plug>AM_T=|endif
-if !hasmapto('<Plug>AM_T?')	 |map <unique> <Leader>T?		<Plug>AM_T?|endif
-if !hasmapto('<Plug>AM_T@')	 |map <unique> <Leader>T@		<Plug>AM_T@|endif
-if !hasmapto('<Plug>AM_Tab') |map <unique> <Leader>Tab		<Plug>AM_Tab|endif
-if !hasmapto('<Plug>AM_Tsp') |map <unique> <Leader>Tsp		<Plug>AM_Tsp|endif
-if !hasmapto('<Plug>AM_T~')	 |map <unique> <Leader>T~		<Plug>AM_T~|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T|')|map <unique> <Leader>T|		<Plug>AM_T||endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T#')	 |map <unique> <Leader>T#		<Plug>AM_T#|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T,')	 |map <unique> <Leader>T,		<Plug>AM_T,o|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_Ts,') |map <unique> <Leader>Ts,		<Plug>AM_Ts,|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T:')	 |map <unique> <Leader>T:		<Plug>AM_T:|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T;')	 |map <unique> <Leader>T;		<Plug>AM_T;|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T<')	 |map <unique> <Leader>T<		<Plug>AM_T<|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T=')	 |map <unique> <Leader>T=		<Plug>AM_T=|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T?')	 |map <unique> <Leader>T?		<Plug>AM_T?|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T@')	 |map <unique> <Leader>T@		<Plug>AM_T@|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_Tab') |map <unique> <Leader>Tab		<Plug>AM_Tab|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_Tsp') |map <unique> <Leader>Tsp		<Plug>AM_Tsp|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_T~')	 |map <unique> <Leader>T~		<Plug>AM_T~|endif
 
 map <silent> <script> <Plug>AM_T| <SID>WS:AlignCtrl mIp0P0=r <Bar><CR>:'a,.Align<CR><SID>WE
 map <silent> <script> <Plug>AM_T#   <SID>WS:AlignCtrl mIp0P0=r #<CR>:'a,.Align<CR><SID>WE
@@ -140,28 +140,28 @@ map <silent> <script> <Plug>AM_T~   <SID>WS:AlignCtrl mIp0P0=r ~<CR>:'a,.Align<C
 
 " ---------------------------------------------------------------------
 " character-based left-justified alignment maps {{{2
-if !hasmapto('<Plug>AM_t|')	|map <unique> <Leader>t|	<Plug>AM_t||endif
-if !hasmapto('<Plug>AM_t#')		|map <unique> <Leader>t#	<Plug>AM_t#|endif
-if !hasmapto('<Plug>AM_t,')		|map <unique> <Leader>t,	<Plug>AM_t,|endif
-if !hasmapto('<Plug>AM_t:')		|map <unique> <Leader>t:	<Plug>AM_t:|endif
-if !hasmapto('<Plug>AM_t;')		|map <unique> <Leader>t;	<Plug>AM_t;|endif
-if !hasmapto('<Plug>AM_t<')		|map <unique> <Leader>t<	<Plug>AM_t<|endif
-if !hasmapto('<Plug>AM_t=')		|map <unique> <Leader>t=	<Plug>AM_t=|endif
-if !hasmapto('<Plug>AM_ts,')	|map <unique> <Leader>ts,	<Plug>AM_ts,|endif
-if !hasmapto('<Plug>AM_ts:')	|map <unique> <Leader>ts:	<Plug>AM_ts:|endif
-if !hasmapto('<Plug>AM_ts;')	|map <unique> <Leader>ts;	<Plug>AM_ts;|endif
-if !hasmapto('<Plug>AM_ts<')	|map <unique> <Leader>ts<	<Plug>AM_ts<|endif
-if !hasmapto('<Plug>AM_ts=')	|map <unique> <Leader>ts=	<Plug>AM_ts=|endif
-if !hasmapto('<Plug>AM_w=')		|map <unique> <Leader>w=	<Plug>AM_w=|endif
-if !hasmapto('<Plug>AM_t?')		|map <unique> <Leader>t?	<Plug>AM_t?|endif
-if !hasmapto('<Plug>AM_t~')		|map <unique> <Leader>t~	<Plug>AM_t~|endif
-if !hasmapto('<Plug>AM_t@')		|map <unique> <Leader>t@	<Plug>AM_t@|endif
-if !hasmapto('<Plug>AM_m=')		|map <unique> <Leader>m=	<Plug>AM_m=|endif
-if !hasmapto('<Plug>AM_tab')	|map <unique> <Leader>tab	<Plug>AM_tab|endif
-if !hasmapto('<Plug>AM_tml')	|map <unique> <Leader>tml	<Plug>AM_tml|endif
-if !hasmapto('<Plug>AM_tsp')	|map <unique> <Leader>tsp	<Plug>AM_tsp|endif
-if !hasmapto('<Plug>AM_tsq')	|map <unique> <Leader>tsq	<Plug>AM_tsq|endif
-if !hasmapto('<Plug>AM_tt')		|map <unique> <Leader>tt	<Plug>AM_tt|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t|')	|map <unique> <Leader>t|	<Plug>AM_t||endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t#')		|map <unique> <Leader>t#	<Plug>AM_t#|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t,')		|map <unique> <Leader>t,	<Plug>AM_t,|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t:')		|map <unique> <Leader>t:	<Plug>AM_t:|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t;')		|map <unique> <Leader>t;	<Plug>AM_t;|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t<')		|map <unique> <Leader>t<	<Plug>AM_t<|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t=')		|map <unique> <Leader>t=	<Plug>AM_t=|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_ts,')	|map <unique> <Leader>ts,	<Plug>AM_ts,|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_ts:')	|map <unique> <Leader>ts:	<Plug>AM_ts:|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_ts;')	|map <unique> <Leader>ts;	<Plug>AM_ts;|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_ts<')	|map <unique> <Leader>ts<	<Plug>AM_ts<|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_ts=')	|map <unique> <Leader>ts=	<Plug>AM_ts=|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_w=')		|map <unique> <Leader>w=	<Plug>AM_w=|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t?')		|map <unique> <Leader>t?	<Plug>AM_t?|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t~')		|map <unique> <Leader>t~	<Plug>AM_t~|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_t@')		|map <unique> <Leader>t@	<Plug>AM_t@|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_m=')		|map <unique> <Leader>m=	<Plug>AM_m=|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_tab')	|map <unique> <Leader>tab	<Plug>AM_tab|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_tml')	|map <unique> <Leader>tml	<Plug>AM_tml|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_tsp')	|map <unique> <Leader>tsp	<Plug>AM_tsp|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_tsq')	|map <unique> <Leader>tsq	<Plug>AM_tsq|endif
+if exists("g:autoload_AlignMapsPlugin") && !hasmapto('<Plug>AM_tt')		|map <unique> <Leader>tt	<Plug>AM_tt|endif
 
 map <silent> <script> <Plug>AM_t|		<SID>WS:AlignCtrl mIp0P0=l <Bar><CR>:'a,.Align<CR><SID>WE
 map <silent> <script> <Plug>AM_t#		<SID>WS:AlignCtrl mIp0P0=l #<CR>:'a,.Align<CR><SID>WE
